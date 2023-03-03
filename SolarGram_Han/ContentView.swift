@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SolarGram_Han
+//  SolarGram
 //
 //  Created by Han Gao on 3/2/23.
 //
@@ -9,13 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        // Add "Photos" and "Profiles" as TabViews
+        
+        TabView {
+            Photos()
+                .tabItem() {
+                    Image(systemName: "photo.fill")
+                    Text("Photos")
+                }
+            Profiles()
+                .tabItem() {
+                    Image(systemName: "person.crop.circle.fill")
+                    Text("Photos")
+                }
         }
-        .padding()
     }
 }
 
