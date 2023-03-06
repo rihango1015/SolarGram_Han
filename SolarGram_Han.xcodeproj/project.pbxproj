@@ -11,8 +11,10 @@
 		2C15257629B17F0400630F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15257529B17F0400630F75 /* ContentView.swift */; };
 		2C15257829B17F0500630F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C15257729B17F0500630F75 /* Assets.xcassets */; };
 		2C15257C29B17F0500630F75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C15257B29B17F0500630F75 /* Preview Assets.xcassets */; };
-		2C15258529B17F9B00630F75 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15258429B17F9B00630F75 /* Photos.swift */; };
+		2C15258529B17F9B00630F75 /* Photos_Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15258429B17F9B00630F75 /* Photos_Row.swift */; };
 		2C15258729B17FA200630F75 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15258629B17FA200630F75 /* Profiles.swift */; };
+		2C15258D29B5A04400630F75 /* Photos_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15258C29B5A04400630F75 /* Photos_List.swift */; };
+		2C15258F29B5A4C300630F75 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15258E29B5A4C300630F75 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +24,10 @@
 		2C15257729B17F0500630F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C15257929B17F0500630F75 /* SolarGram_Han.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SolarGram_Han.entitlements; sourceTree = "<group>"; };
 		2C15257B29B17F0500630F75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2C15258429B17F9B00630F75 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		2C15258429B17F9B00630F75 /* Photos_Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos_Row.swift; sourceTree = "<group>"; };
 		2C15258629B17FA200630F75 /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
+		2C15258C29B5A04400630F75 /* Photos_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos_List.swift; sourceTree = "<group>"; };
+		2C15258E29B5A4C300630F75 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			children = (
 				2C15257329B17F0400630F75 /* SolarGram_HanApp.swift */,
 				2C15257529B17F0400630F75 /* ContentView.swift */,
+				2C15258E29B5A4C300630F75 /* Data.swift */,
 				2C15258329B17F8D00630F75 /* Views */,
 				2C15257729B17F0500630F75 /* Assets.xcassets */,
 				2C15257929B17F0500630F75 /* SolarGram_Han.entitlements */,
@@ -77,7 +82,8 @@
 		2C15258329B17F8D00630F75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2C15258429B17F9B00630F75 /* Photos.swift */,
+				2C15258C29B5A04400630F75 /* Photos_List.swift */,
+				2C15258429B17F9B00630F75 /* Photos_Row.swift */,
 				2C15258629B17FA200630F75 /* Profiles.swift */,
 			);
 			path = Views;
@@ -153,7 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C15258529B17F9B00630F75 /* Photos.swift in Sources */,
+				2C15258D29B5A04400630F75 /* Photos_List.swift in Sources */,
+				2C15258F29B5A4C300630F75 /* Data.swift in Sources */,
+				2C15258529B17F9B00630F75 /* Photos_Row.swift in Sources */,
 				2C15258729B17FA200630F75 /* Profiles.swift in Sources */,
 				2C15257629B17F0400630F75 /* ContentView.swift in Sources */,
 				2C15257429B17F0400630F75 /* SolarGram_HanApp.swift in Sources */,
