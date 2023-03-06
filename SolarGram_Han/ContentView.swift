@@ -13,7 +13,7 @@ struct ContentView: View {
         // Add "Photos" and "Profiles" as TabViews
         
         TabView {
-            Photos()
+            Photos_Row()
                 .tabItem() {
                     Image(systemName: "photo.fill")
                     Text("Photos")
