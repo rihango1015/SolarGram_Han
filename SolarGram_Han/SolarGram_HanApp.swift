@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SolarGram_HanApp: App {
+    
+    @StateObject var viewModel = PublicPostsViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(PublicPostsViewModel())
         }
     }
 }
