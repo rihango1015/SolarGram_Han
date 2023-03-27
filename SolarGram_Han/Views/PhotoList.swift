@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct PhotoList: View {
-    @State var feed: [Post] = PublicPosts.sampleData
+    
+    @EnvironmentObject var viewModel: PublicPostsViewModel
     
     var body: some View {
-        List($feed) { post in
+        List(viewModel.publicPosts) { post in
             PhotoRow(post: post)
                 .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
         }
@@ -22,5 +23,6 @@ struct PhotoList: View {
 struct PhotoList_Previews: PreviewProvider {
     static var previews: some View {
         PhotoList()
+            .environmentObject(PublicPostsViewModel())
     }
 }
