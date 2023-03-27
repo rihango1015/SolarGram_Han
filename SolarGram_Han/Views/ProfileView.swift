@@ -9,24 +9,24 @@ import SwiftUI
 
 struct ProfileView: View {
         
-    let posts = PublicPosts.sampleData.filter { post in
-        post.author.id == PublicPosts.currentUser.id
-    }
+    @EnvironmentObject var viewModel: PublicPostsViewModel
     
     private let headerHeight: CGFloat = 120
     
     var body: some View {
         VStack {
             headerView
-            GridPhotoView(posts: posts)
+            GridPhotoView(posts: viewModel.currentUserPosts)
         }
     }
     
     var headerView: some View {
         VStack {
-            SquareImage(Image(PublicPosts.currentUser.photoID))
-                .clipShape(Circle())
-            Text(PublicPosts.currentUser.name)
+            Image(PublicPosts.currentUser.photoID)
+                .resizable()
+                .frame(width: 100, height: 100)
+                .cornerRadius(50)
+            Text(PublicPosts.currentUser.userName)
                 .font(.title)
         }
         .frame(height: headerHeight)
@@ -36,7 +36,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView().environmentObject(PublicPostsViewModel())
     }
 }
 
