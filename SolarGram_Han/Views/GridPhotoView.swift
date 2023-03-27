@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GridPhotoView: View {
     
+    @EnvironmentObject var viewModel: PublicPostsViewModel
+    
     var posts: [Post]
     
     var body: some View {
@@ -16,7 +18,7 @@ struct GridPhotoView: View {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum:geo.size.width/4))]) {
                     ForEach(posts) { post in
-                        SquareImage(Image(post.photoID))
+                        SquareImage(post.image)
                     }
                 }
             }
@@ -26,8 +28,9 @@ struct GridPhotoView: View {
 }
 
 struct GridPhotoView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridPhotoView(posts: PublicPosts.sampleData)
+    static var previews: some View {        
+        GridPhotoView(posts: PublicPostsViewModel().publicPosts)
+            .environmentObject(PublicPostsViewModel())
     }
 }
 
