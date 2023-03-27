@@ -9,14 +9,16 @@ import SwiftUI
 
 struct PhotoRow: View {
     
-    @Binding var post: Post
-    
     private let authorImageHeight: CGFloat = 30
+    
+    var post: Post
+    
+    @EnvironmentObject var viewModel: PublicPostsViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             authorView
-            SquareImage(Image(post.photoID))
+            SquareImage(post.image)
             descriptionView
             actionView
             #if os(macOS)
@@ -31,7 +33,7 @@ struct PhotoRow: View {
             SquareImage(Image(post.author.photoID))
                 .frame(height: authorImageHeight)
                 .clipShape(Circle())
-            Text(post.author.name)
+            Text(post.author.userName)
                 .font(.headline)
         }
         .padding(.leading, 8)
@@ -40,7 +42,7 @@ struct PhotoRow: View {
     var actionView: some View {
         HStack {
             Button {
-                post.isFavorite.toggle()
+                viewModel.setPostFavorite(post: post)
             } label: {
                 if post.isFavorite {
                     Image(systemName: "heart.fill")
@@ -63,6 +65,7 @@ struct PhotoRow: View {
 
 struct PhotoRow_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoRow(post: .constant(PublicPosts.sampleData[1]))
+        PhotoRow(post: PublicPostsViewModel().publicPosts[0])
+            .environmentObject(PublicPostsViewModel())
     }
 }
